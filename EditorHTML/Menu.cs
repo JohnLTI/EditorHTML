@@ -12,6 +12,9 @@ namespace EditorHTML
 
             Tela();
             Opcoes();
+
+            var opcao = short.Parse(Console.ReadLine());
+            HandleMenuOption(opcao);
         }
 
         public static void Tela()
@@ -59,5 +62,22 @@ namespace EditorHTML
             Console.SetCursorPosition(3, 10);
             Console.Write("Opção: ");
         }
+
+        public static void HandleMenuOption(short opcao)
+        {
+            switch (opcao)
+            {
+                case 1: Console.WriteLine("Editor"); break;
+                case 2: Console.WriteLine("View"); break;
+                case 0:
+                    {
+                        Console.Clear();
+                        Environment.Exit(0);
+                        break;
+                    }
+                default: Show(); break;
+            }
+        }
+
     }
 }
